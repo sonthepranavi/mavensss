@@ -95,7 +95,103 @@ git push -u origin main
 
  ----------------
  maven webb
- 
+ MAVEN WEB PROJECT — RUN LOCALLY WITHOUT JENKINS
+
+Below steps work for any Maven Web Application (.war project).
+
+⭐ Step 1: Check Maven Installation
+
+Open CMD:
+
+mvn -version
+
+
+If Maven is installed, it shows version.
+If not → install Maven + set MAVEN_HOME.
+
+⭐ Step 2: Go to Your Maven Web Project Folder
+
+Example:
+
+cd C:\Projects\MavenWeb
+
+
+Make sure this folder contains:
+
+✔ pom.xml
+✔ src/main/java
+✔ src/main/webapp (JSP, HTML, etc.)
+
+⭐ Step 3: Clean & Build the Project
+
+Run:
+
+mvn clean install
+
+
+This will:
+
+✔ Clean target folder
+✔ Compile
+✔ Test
+✔ Package .war file
+
+After success, you will get:
+
+target/yourprojectname.war
+
+⭐ Step 4: Download & Install Apache Tomcat
+
+Go to Tomcat website
+
+Download Apache Tomcat 9 (Windows ZIP)
+
+Extract to:
+
+C:\tomcat9
+
+⭐ Step 5: Deploy the WAR to Tomcat
+Method 1 — Copy WAR file
+
+Copy your .war to:
+
+C:\tomcat9\webapps\
+
+
+Example:
+
+copy target\mavenweb.war C:\tomcat9\webapps\
+
+
+Tomcat will auto-extract it into a folder.
+
+⭐ Step 6: Start Tomcat Server
+
+Go to Tomcat bin folder:
+
+cd C:\tomcat9\bin
+startup.bat
+
+
+If server starts correctly → it shows Tomcat started.
+
+⭐ Step 7: Open App in Browser
+
+Browser → enter:
+
+http://localhost:8080/mavenweb
+
+
+(Use your project name after 8080.)
+
+Your JSP/HTML homepage will open.
+
+⭐ Step 8: Stop Tomcat
+shutdown.bat
+
+🎯 OPTIONAL: If you want to run without
+
+
  ---------------------------------------
  jenkin pipelines steps
  ======Jenkins Pipeline Steps======
