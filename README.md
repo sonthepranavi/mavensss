@@ -6,7 +6,7 @@ Steps
 Press Windows + R
 
 Type: cmd
-
+.
 Click OK
 
 Type:
